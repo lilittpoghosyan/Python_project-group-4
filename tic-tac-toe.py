@@ -47,5 +47,23 @@ def winner(board):
     else:
         False
 
+def inputt():
+    while True:
+        n = input("Choose the case: \n")
+        if n.isdigit() and int(n) >= 1 and int(n) < 10:
+            break 
+        else: 
+            print("!!!Please enter the number between 1 and 9")
+    while True: 
+        b = input("Enter your symbol: [x / o]\n")
+        if b == "x" or b == "o":
+            board[int(n) - 1] = b
+            break
+        else: 
+            print("!!!Unidentified character. Please enter x or o: ")
+    
+
+
+
 board = [' ',  ' ',  ' ',  ' ',  ' ',   ' ',  ' ',  ' ',   ' ']
 printboard(board)
