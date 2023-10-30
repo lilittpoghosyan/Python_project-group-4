@@ -58,11 +58,10 @@ def validation(name):
             return int(n)
         print("!!!Please enter the number between 1 and 9")
     
-def is_free(board, choice):
-    """
-    Luiz gri kody
-    """
-
+def is_empty(board, choice):
+    if board[n-1] == ' ':
+        return True
+    return False
 
 
 board = [' ',  ' ',  ' ',  ' ',  ' ',   ' ',  ' ',  ' ',   ' ']
@@ -77,10 +76,10 @@ for i in range(9):
     if i % 2 == 0:
         while True:
             choice1 = validation(name1)
-            if is_free(board, choice1):
+            if is_empty(board, choice1):
                 board[choice1 - 1] = 'X'
                 break
-            print('Please enter a number, which is free')
+            print('Please enter a number, which is empty')
         printboard(board)
         if winner(board):
             victory1 += 1
