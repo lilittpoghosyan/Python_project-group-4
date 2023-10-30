@@ -55,18 +55,34 @@ def validation(name):
     while True:
         n = input(f"{name}'s turn: ")
         if n.isdigit() and int(n) >= 1 and int(n) < 10:
-            return n
+            return int(n)
         print("!!!Please enter the number between 1 and 9")
     
-def is_free():
+def is_free(board, choice):
     """
-    Luiz gri stex kody
-    
+    Luiz gri kody
     """
+
 
 
 board = [' ',  ' ',  ' ',  ' ',  ' ',   ' ',  ' ',  ' ',   ' ']
 printboard(board)
 
 name1 = input('Enter player1 name: ')
-name2 = input('ENter player2 name')
+name2 = input('ENter player2 name: ')
+
+victory1 = 0
+
+for i in range(9):
+    if i % 2 == 0:
+        while True:
+            choice1 = validation(name1)
+            if is_free(board, choice1):
+                board[choice1 - 1] = 'X'
+                break
+            print('Please enter a number, which is free')
+        printboard(board)
+        if winner(board):
+            victory1 += 1
+            print(f'{name1} won!!!')
+
