@@ -22,5 +22,26 @@ def category_validation():
         else:
             print("No such category exists. Please, try once more: \n")
 
+
+def picture(false_letter):
+    ''' nkarum a mardukin sxal nermucac tareri qanakin hamapatasxan vichakum '''
+    if false_letter == 1:    
+        print("\n|\n|\n|\n|\n|")
+    elif false_letter == 2:
+        print(" \n---------\n|\n|\n|\n|\n|")
+    elif false_letter == 3:
+        print(" \n---------\n|\t\t|\n|\n|\n|\n|")
+    elif false_letter == 4:
+        print(" \n---------\n|\t\t|\n|\t\tO\n|\n|\n|")
+    elif false_letter == 5:
+        print(" \n---------\n|\t\t|\n|\t\tO\n|\t\t| \n|\n|")
+    elif false_letter == 6:
+        print(" \n---------\n|\t\t|\n|\t\tO\n|\t   /| \n|\n|")
+    elif false_letter == 7:
+        print(" \n---------\n|\t\t|\n|\t\tO\n|\t   /|\ \n|\n|")
+    elif false_letter == 8:
+        print(" \n---------\n|\t\t|\n|\t\tO\n|\t   /|\ \n|\t   / \n|")
+    elif false_letter == 9:
+        print(" \n---------\n|\t\t|\n|\t\tO\n|\t   /|\ \n|\t   / \ \n|", "\nYOU LOSE:(")
     
     
