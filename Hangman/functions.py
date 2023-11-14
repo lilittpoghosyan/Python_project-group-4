@@ -1,3 +1,5 @@
+import random
+
 def used_letter(letter, letters):
     if letter in letters:
         return True
@@ -21,7 +23,7 @@ def letter_input(name, letters):
 
 def category_input():
     ''' sturgum a usery goyutyun unecox category a ynter, te che '''
-    print("--------CATEGORIES--------\n\n\t\t1. Animals",
+    print("Choose a category\n--------CATEGORIES--------\n\n\t\t1. Animals",
           "\n\t\t2. Professions\n\t\t3. Countries and Cities",
           "\n\t\t4. Fruits and Vegetables\n")   
     while True:
@@ -51,7 +53,7 @@ def print_hangman(false_letter):
     elif false_letter == 8:
         print(" \n---------\n|\t\t|\n|\t\tO\n|\t       /|\ \n|\t      / \n|")
     elif false_letter == 9:
-        print(" \n---------\n|\t\t|\n|\t\tO\n|\t       /|\ \n|\t       / \ \n|", "\nYOU LOSE:(")
+        print("\n---------\n|\t|\n|\tO\n|      /|\ \n|      / \ \n|", "\nYOU LOSE:(")
     print('\n')
     
     
@@ -74,3 +76,43 @@ def winner(word_pakac):
     return True
 
 
+
+
+def random_choice_from_category(choosen_category):
+    """ This function selects a random word from the appropriate category """
+    
+    if choosen_category == "1":
+        with open('Animals.txt', 'r') as file:
+            text = file.read()
+            words = text.split()
+            random_animal = random.choice(words).lower()
+
+            if words:
+                return random_animal
+
+    if choosen_category == "2":  # Use elif instead of another if
+        with open('Professions.txt', 'r') as file:
+            text = file.read()
+            words = text.split()
+            random_profession = random.choice(words).lower()
+
+            if words:
+                return random_profession
+
+    if choosen_category == "3":
+        with open('Countries_cities.txt', 'r') as file:
+            text = file.read()
+            words = text.split()
+            random_country_or_city = random.choice(words).lower()
+
+            if words:
+                return random_country_or_city
+
+    if choosen_category == "4":
+        with open('Fruits_Vegetables.txt', 'r') as file:
+            text = file.read()
+            words = text.split()
+            random_fruit_or_vegetable = random.choice(words).lower()
+
+            if words:
+                return random_fruit_or_vegetable
