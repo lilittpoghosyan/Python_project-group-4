@@ -5,8 +5,7 @@ from functions import print_hangman
 from functions import letter_in_word
 from functions import is_in_word
 from functions import winner
-
-
+from functions import random_choice_from_category
 
 
 # with open('your_file.txt', 'r') as file:
@@ -15,29 +14,16 @@ from functions import winner
 #     random_word = random.choice(words_list)
 
 # print(random_word)
+letters = []
+word_pakac = ''
+false_letter = 0
 
 
 name = input('Enter your name: ')
-letters = []
-animal_names = [
-    "lion", "elephant", "giraffe", "zebra", "tiger", "kangaroo", "penguin", "cheetah",
-    "koala", "panda", "rhino", "hippo", "lemur", "otter", "jaguar", "parrot", "snake",
-    "crocodile", "dolphin", "whale", "octopus", "gazelle", "buffalo", "fox", "bear",
-    "wolf", "bat", "seagull", "mongoose", "dingo", "platypus", "cockatoo", "skunk",
-    "armadillo", "lemming", "quokka", "vulture", "wombat", "lynx", "hamster", "kookaburra",
-    "chameleon", "frog", "pangolin", "panther", "lemur", "armadillo", "iguana", "lemming",
-    "numbat", "tapir", "ocelot", "reindeer", "bobcat", "sloth", "cockroach", "chinchilla",
-    "impala", "yak", "gecko", "salamander", "macaw", "wallaby", "stoat", "hedgehog",
-    "narwhal", "kookaburra", "woodpecker", "humpback", "quokka", "vulture", "shrimp",
-    "toucan", "wolverine", "barracuda", "armadillo", "weasel", "lynx", "mongoose", "axolotl",
-    "chimpanzee", "orangutan", "lemur", "gibbon", "gorilla", "bonobo", "baboon", "macaque",
-    "capuchin", "tamarin", "siamang", "howler", "spider", "platypus", "giraffe", "gorilla"
-]
+chosen_category = category_input()
+chosen_word = random_choice_from_category(chosen_category)
 
-chosen_word = random.choice(animal_names)
 
-word_pakac = ''
-false_letter = 0
 
 
 for i in range(len(chosen_word)):
@@ -54,4 +40,4 @@ while not(winner(word_pakac)):
         print_hangman(false_letter)
 
 
-
+print(chosen_word)
